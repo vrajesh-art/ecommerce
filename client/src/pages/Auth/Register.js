@@ -34,35 +34,35 @@ const Register = () => {
 
     <Layout>
       <div className='Register'>
-        <h1>Register Page</h1>
+        <h1 className='page-header'>Register Page</h1>
         <form onSubmit={handleClick}>
           <div className="mb-3">
 
-            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Name' value={name} onChange={(e) => setName(e.target.value)} required />
+            <input type="text" className="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Name' value={name} onChange={(e) => setName(e.target.value)} required />
 
           </div>
           <div className="mb-3">
 
-            <input type="Email" className="form-control" id="exampleInputPassword1" placeholder='Enter Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input type="Email" className="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputPassword1" placeholder='Enter Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div className="mb-3">
 
-            <input type="password" className="form-control" id="exampleInputPassword1" placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input type="password" className="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputPassword1" placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <div className="mb-3">
 
-            <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Enter Phone ' value={phone} onChange={(e) => setPhone(e.target.value)} required />
+            <input type="text" className="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputPassword1" placeholder='Enter Phone ' value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
           <div className="mb-3">
 
-            <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Enter Address' value={address} onChange={(e) => setAddress(e.target.value)} required />
+            <input type="text" className="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputPassword1" placeholder='Enter Address' value={address} onChange={(e) => setAddress(e.target.value)} required />
           </div>
           <div className="mb-3">
 
-            <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Enter Your favourite sports name' value={answer} onChange={(e) => setAnswer(e.target.value)} required />
+            <input type="text" className="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputPassword1" placeholder='Enter Your favourite sports name' value={answer} onChange={(e) => setAnswer(e.target.value)} required />
           </div>
 
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" class="btn text-white" style={{ background: 'purple' }}>Submit</button>
         </form>
       </div>
     </Layout >

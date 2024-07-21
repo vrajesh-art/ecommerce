@@ -53,21 +53,21 @@ const Login = () => {
         <Layout>
 
             <div className='login'>
-                <h1>Login Page</h1>
+                <h1 className='page-header'>Login Page</h1>
                 <form onSubmit={handlelogin}>
                     <div class="form-group mb-3">
 
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type="email" class="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
                     </div>
                     <div class="form-group mb-3">
 
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" class="form-control" style={{ border: 'none', borderBottom: '5px solid purple', outline: 'none', boxShadow: 'none' }} id="exampleInputPassword1" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div class="form-group mb-3">
-                        <button type="button" class="btn btn-primary" onClick={() => { navigate('/forgot-password') }}>Forgot password</button>
+                        <button type="button" class="btn text-white" style={{ background: 'purple' }} onClick={() => { navigate('/forgot-password') }}>Forgot password</button>
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn text-white" style={{ background: 'purple' }}>Login</button>
                 </form>
 
             </div>
