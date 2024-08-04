@@ -116,7 +116,7 @@ const Homepage = () => {
                 <div className="row mt-2 flex-md-row-reverse">
                     <div className="col-md-9">
                         <h1 className="text-center">
-                            <div className="d-flex flex-wrap gap-2">
+                            <div className="d-flex flex-wrap align-items-center justify-content-center gap-2">
                                 {products?.map((p) => (
                                     <div className="card mb-3 m-2 mt-1 shadow-lg rounded-5" style={{ width: '16rem', border: 'none' }} key={p._id}>
                                         <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top img-fluid rounded-circle" style={{ border: 'none' }} alt={p.name} />
@@ -138,7 +138,7 @@ const Homepage = () => {
                         </h1>
                         <div className='m-2 p-3'>
                             {products && products.length < total && (
-                                <button className='btn btn-warning' onClick={(e) => {
+                                <button className='btn text-white' style={{ backgroundColor: 'purple' }} onClick={(e) => {
                                     e.preventDefault();
                                     setPage(page + 1);
                                 }}>

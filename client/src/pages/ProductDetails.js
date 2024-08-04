@@ -36,39 +36,44 @@ const ProductDetails = () => {
     }
     return (
         <Layout>
-            <div className="row container mt-4">
-                <div className="col-md-6">
-                    <img src={`/api/v1/product/product-photo/${product._id}`} className='card-img-top' alt={product.name} height="350" width="500" />
+            <div className='row container mt-4 page-header'>
+                <h1 className='text-center page-header'>Product Details</h1>
+            </div>
+            <div className="row container mt-4 px-4">
+                <div className="col-md-6 shadow-lg" style={{ borderRadius: '50px' }}>
+                    <img src={`/api/v1/product/product-photo/${product._id}`} className='card-img-top img-fluid rounded-circle ' style={{ border: 'none', height: '350px' }} alt={product.name} />
                 </div>
-                <div className="col-md-6">
-                    <h1 className=' text-center'>Product Details</h1>
-                    <h6>Name : {product.name}</h6>
-                    <h6>Description : {product.description}</h6>
-                    <h6>Price : {product.price}</h6>
-                    <h6>Category : {product?.category?.name}</h6>
-                    {/* <h6>Category : {product.category.name}</h6> */}
-                    <button className='btn btn-secondary'>Add To Cart</button>
+                <div className="col-md-6 d-flex justify-content-end ">
+
+                    <div className='text-start '>
+                        <p className='fs-5'><span className='fw-normal' style={{ color: 'purple' }}>Name</span> : {product.name}</p>
+                        <p className='fs-5'><span className='fw-normal' style={{ color: 'purple' }}>Description</span> : {product.description}</p>
+                        <p className='fs-5'><span className='fw-normal' style={{ color: 'purple' }}>Price</span> : {product.price}</p>
+                        <p className='fs-5'><span className='fw-normal ' style={{ color: 'purple' }}>Category</span> : {product?.category?.name}</p>
+                        {/* <h6>Category : {product.category.name}</h6> */}
+                        <button className="btn py-2 px-3 text-white" style={{ backgroundColor: 'purple' }}>Add To Cart</button>
+                    </div>
                 </div>
             </div>
             <hr />
             <div className="row">
-                <h1>Here are some similar products</h1>
+                <h1 className='text-center page-header'>Here are some similar products</h1>
                 {/* below karne se hume json ke form mein pura data milega */}
                 {/* {JSON.stringify(relatedProducts, null, 4)} */}
                 {relatedProducts.length < 1 && (<p className='text-center'>No similar products found</p>)}
-                <div className="display-flex flex-wrap">
+                <div className="display-flex flex-wrap p-4">
                     {relatedProducts?.map((p) => (
-                        <div className="card m-2" style={{ width: "18rem" }}>
-                            <img src={`/api/v1/product/product-photo/${p._id}`} className='card-img-top' alt={p.name} />
+                        <div className="card m-2 shadow-lg rounded-5" style={{ width: "16rem", border: 'none' }}>
+                            <img src={`/api/v1/product/product-photo/${p._id}`} className='card-img-top img-fluid rounded-circle' alt={p.name} />
                             <div className="card-body">
                                 <h5 className="card-title">{p.name}</h5>
-                                <p className="card-text">
-                                    {p.description.substring(0, 30)}...
-                                </p>
-                                <p className="card-text">$ {p.price}</p>
 
-                                <button className='btn btn-primary ms-1' onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
-                                <button className='btn btn-secondary ms-1'>Add too cart</button>
+                                <p className="card-text">$ {p.price}</p>
+                                <div className='d-flex justify-content-between'>
+
+                                    <button className="btn py-2 px-3 text-white" style={{ backgroundColor: 'purple' }} onClick={() => navigate(`/product/${p.slug}`)}> Details</button>
+                                    <button className='btn py-2 px-3 text-white' style={{ backgroundColor: 'purple' }}>cart</button>
+                                </div>
                             </div>
                         </div>
                     ))}

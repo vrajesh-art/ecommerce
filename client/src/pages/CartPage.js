@@ -90,24 +90,21 @@ const CartPage = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <h1 className="text-center bg-light p-2 mb-1 mt-2">
-                            {/* below line kehta hai agar ayth.token hai toh uss case mein auth?.user?.name display kardena */}
-                            {`Hello ${auth?.token && auth?.user?.name}`}
-                        </h1>
+
                         <h4 className='text-center'>
-                            {cart.length > 1 ? `you have ${cart.length} items in your cart ${auth?.token ? "" : "please login to checkout"}` : "your cart is empty"}
+                            {cart.length > 0 ? ` ${auth?.token ? "" : "please login to checkout"}` : "your cart is empty"}
                         </h4>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
                         {cart?.map((p) => (
-                            <div className="row card flex-row mb-2 ">
+                            <div className="row card flex-row mb-2 rounded-4 p-2">
                                 <div className="col-md-4">
-                                    <img src={`/api/v1/product/product-photo/${p._id}`} className='card-img-top' alt={p.name} width="200px" height='200px' />
+                                    <img src={`/api/v1/product/product-photo/${p._id}`} className='card-img-top ' alt={p.name} width="200px" height='200px' />
                                 </div>
-                                <div className="col-md-8">
-                                    <h4>{p.name}</h4>
+                                <div className="col-md-8 ">
+                                    <h4 className='category-header'>{p.name}</h4>
                                     <p>{p.description.substring(0, 30)}..</p>
                                     <p>Price: ${p.price}</p>
                                     <button className='btn btn-danger' onClick={() => removeCartItem(p._id)}>remove</button>
@@ -116,17 +113,17 @@ const CartPage = () => {
                         ))}
                     </div>
                     <div className="col-md-4 text-center">
-                        <h2>cart Summary</h2>
+                        <h2 className='page-header'>cart Summary</h2>
                         <p>Total|CheckOut|Payment</p>
                         {/* below is the horizontal line for giving the line for seperation */}
                         <hr />
-                        <h4>Total={totalPrice()}</h4>
+                        <h4 className='category-header'>Total={totalPrice()}</h4>
 
                         {auth?.user?.address ? (<>
                             <div className="mb-3">
-                                <h4>Current address</h4>
+                                <h4 className='category-header'>Current address</h4>
                                 <h5>{auth?.user?.address}</h5>
-                                <button className='btn btn-outline-warning' onClick={() =>
+                                <button className='btn text-white' style={{ backgroundColor: 'purple' }} onClick={() =>
                                     navigate('/dashboard/user/profile')}>Update Address</button>
                             </div>
                         </>) : (<div className='mb-3'>{
@@ -149,7 +146,7 @@ const CartPage = () => {
                                     // oninstance mein hume instance milta hai usse hum setinstance ke madat se instance ko set karlenge
                                     onInstance={(instance) => setInstance(instance)}
                                 />
-                                <button className='btn btn-primary' onClick={handlePayment}
+                                <button className='btn text-white' style={{ backgroundColor: 'purple' }} onClick={handlePayment}
                                     disabled={loading || !instance || !auth?.user?.address}>{loading ? "processing" : "make payment"}</button>
                             </>}
 

@@ -11,6 +11,8 @@ font-family: 'Ubuntu', sans-serif; */
   font-family: "Poppins", sans-serif;
 }
 
+
+
 footer .footer-Social-Links a i {
   color: gray;
 }
@@ -63,6 +65,7 @@ footer {
 /* styling for the page not available section */
 .page-header {
   color: purple;
+  font-family: 'Poppins', sans-serif;
 }
 
 .category-header {

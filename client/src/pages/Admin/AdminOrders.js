@@ -48,7 +48,7 @@ const AdminOrders = () => {
                         <AdminMenu />
                     </div>
                     <div className="col-md-9">
-                        <h1 className='text-center'>All Orders</h1>
+                        <h1 className='text-center page-header'>All Orders</h1>
                         {
                             orders?.map((o, i) => {
                                 return (
@@ -56,12 +56,12 @@ const AdminOrders = () => {
                                         <table className="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope='col'>#</th>
-                                                    <th scope='col'>status</th>
-                                                    <th scope='col'>Buyer</th>
+                                                    <th scope='col' style={{ color: 'purple' }}>#</th>
+                                                    <th scope='col' style={{ color: 'purple' }}>status</th>
+                                                    <th scope='col' style={{ color: 'purple' }}>Buyer</th>
 
-                                                    <th scope='col'>Payment</th>
-                                                    <th scope='col'>Quantity</th>
+                                                    <th scope='col' style={{ color: 'purple' }}>Payment</th>
+                                                    <th scope='col' style={{ color: 'purple' }}>Quantity</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -85,10 +85,10 @@ const AdminOrders = () => {
                                             {o?.products?.map((p, i) => (
                                                 <div className="row card flex-row mb-2 ">
                                                     <div className="col-md-4">
-                                                        <img src={`/api/v1/product/product-photo/${p._id}`} className='card-img-top' alt={p.name} width="200px" height='200px' />
+                                                        <img src={`/api/v1/product/product-photo/${p._id}`} className='card-img-top rounded-5 shadow my-2' alt={p.name} width="200px" height='200px' />
                                                     </div>
-                                                    <div className="col-md-8">
-                                                        <h4>{p.name}</h4>
+                                                    <div className="col-md-8 mt-2">
+                                                        <h4 className='category-header'>{p.name}</h4>
                                                         <p>{p.description.substring(0, 30)}..</p>
                                                         <p>Price: ${p.price}</p>
 

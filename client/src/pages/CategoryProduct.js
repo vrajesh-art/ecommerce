@@ -25,8 +25,8 @@ const CategoryProduct = () => {
         <Layout>
             <div className="container mt-3">
 
-                <h4 className="text-center">category-{category?.name}</h4>
-                <h6 className='text-center'>{products?.length}-results founds</h6>
+                <h4 className="text-center fs-2 category-header">{category?.name}</h4>
+                <h6 className='text-center text-capitalize'>{products?.length}-results</h6>
                 <div className="row">
 
                     {/* {JSON.stringify(radio, null, 4)} */}
@@ -71,7 +71,7 @@ const CategoryProduct = () => {
 
 
 
-        </Layout>
+        </Layout >
     )
 }
 

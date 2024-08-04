@@ -12,7 +12,7 @@ const CategoryForm = ({ handleSubmit, value, setValue }) => {
 
                 </div>
 
-                <button type="submit" className="btn btn-primary mt-2">Submit</button>
+                <button type="submit" className="btn text-white mt-2" style={{ backgroundColor: 'purple' }}>Submit</button>
             </form>
 
         </>

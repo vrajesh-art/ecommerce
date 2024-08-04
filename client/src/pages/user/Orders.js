@@ -39,31 +39,32 @@ const Orders = () => {
                             orders?.map((o, i) => {
                                 return (
                                     <div className="border shadow">
-                                        <table className="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope='col'>#</th>
-                                                    <th scope='col'>status</th>
-                                                    <th scope='col'>Buyer</th>
-
-                                                    <th scope='col'>Payment</th>
-                                                    <th scope='col'>Quantity</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>{i + 1}</td>
-                                                    <td>{o?.status}</td>
-                                                    <td>{o?.buyer?.name}</td>
-                                                    {/* moment ek acha pachage hai date ko show karneka */}
-
-                                                    <td>{o?.payment.success ? "Success" : "Failed"}</td>
-                                                    <td>{o?.products.length}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
 
                                         <div className="container">
+                                            <table className="table" style={{ maxWidth: '300px' }}>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope='col'>#</th>
+                                                        <th scope='col'>status</th>
+                                                        <th scope='col'>Buyer</th>
+
+                                                        <th scope='col'>Payment</th>
+                                                        <th scope='col'>Quantity</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{i + 1}</td>
+                                                        <td>{o?.status}</td>
+                                                        <td>{o?.buyer?.name}</td>
+                                                        {/* moment ek acha pachage hai date ko show karneka */}
+
+                                                        <td>{o?.payment.success ? "Success" : "Failed"}</td>
+                                                        <td>{o?.products.length}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             {o?.products?.map((p, i) => (
                                                 <div className="row card flex-row mb-2 ">
                                                     <div className="col-md-4">

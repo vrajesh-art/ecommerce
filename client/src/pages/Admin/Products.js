@@ -27,24 +27,26 @@ const Products = () => {
 
         <Layout>
             <div className="container-fluid m-3 p-3">
-                <div className="row">
+                <div className="row ">
                     <div className='col-md-3'>
                         <AdminMenu />
                     </div>
                     <div className='col-md-9'>
-                        <div className='text-center'><h1>All products</h1></div>
-                        <div className='d-flex flex-wrap'>
+                        <div className='text-center page-header'><h1>All products</h1></div>
+                        <div className='d-flex flex-wrap align-items-center justify-content-center'>
 
                             {product?.map((p) => (
                                 <Link key={p._id} className='Product-link' to={`/dashboard/admin/product/${p.slug}`}>
-                                    <div div className="card mb-3 m-2" style={{ width: '18rem' }} key={p._id}>
+                                    <div div className="card mb-3 m-2 shadow-lg rounded-5" style={{ maxWidth: '16rem', border: 'none' }} key={p._id}>
                                         {/* image yaha pe apan dynamicall fetch karenge by the route apan ne bnaya tah image ko fetch karne ke liye */}
-                                        <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
+                                        <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top img-fluid rounded-circle" alt={p.name} />
                                         <div className="card-body">
                                             <h5 className="card-title">{p.name}</h5>
-                                            <p className="card-text">{p.description.substring(0, 30)}</p>
-                                            <button href="#" className="btn btn-primary ms-1">${p.price}</button>
-                                            <button href="#" className="btn btn-primary ms-1">{p.quantity}</button>
+                                            {/* <p className="card-text">{p.description.substring(0, 30)}</p> */}
+                                            <div className='d-flex '>
+                                                <button href="#" className="btn ms-1 text-white" style={{ backgroundColor: 'purple' }}>${p.price}</button>
+                                                <button href="#" className="btn ms-1 text-white " style={{ backgroundColor: 'purple' }}>{p.quantity}</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </Link>

@@ -69,7 +69,7 @@ const CreateProducts = () => {
                         <AdminMenu />
                     </div>
                     <div className="col-md-9">
-                        <h1>Create Products</h1>
+                        <h1 className='page-header'>Create Products</h1>
 
                         <form onSubmit={handlecreate}>
                             <div className='m-1 w-75'>
@@ -122,7 +122,7 @@ const CreateProducts = () => {
                                 </div>
 
                                 <div className='mb-3'>
-                                    <button type='submit' className='btn btn-primary'>Create product</button>
+                                    <button type='submit' className='btn text-white' style={{ backgroundColor: 'purple' }}>Create product</button>
 
                                 </div>
                             </div>
